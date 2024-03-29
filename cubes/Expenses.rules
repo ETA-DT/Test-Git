@@ -7,7 +7,7 @@ SKIPCHECK;
 
 
 FEEDERS;
-['SALARIES', 'Amount'] => ['HEALTH INSURANCE','Amount'], ['PENSION PLAN','Amount'],
-					['SOCIAL SECURITY','Amount'];
+# ['SALARIES', 'Amount'] => ['HEALTH INSURANCE','Amount'], ['PENSION PLAN','Amount'],
+					#['SOCIAL SECURITY','Amount'];
 
 
