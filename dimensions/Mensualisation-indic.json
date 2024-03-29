@@ -1,0 +1,12 @@
+{
+	"@type":"Dimension",
+	"Name":"Mensualisation-indic",
+	"Hierarchies@Code.links":
+	[
+		"Mensualisation-indic.hierarchies/Mensualisation-indic.json"
+	],
+	"DefaultHierarchy":
+	{
+		"@id":"Dimensions('Mensualisation-indic')/Hierarchies('Mensualisation-indic')"
+	}
+}

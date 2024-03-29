@@ -1,0 +1,35 @@
+#region Prolog
+
+#****Begin: Generated Statements***
+OldCubeLogChanges = CUBEGETLOGCHANGES('Sales_Plan');
+CUBESETLOGCHANGES('Sales_Plan', 0);
+#****End: Generated Statements****
+#endregion
+#region Metadata
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+#endregion
+#region Data
+
+#****Begin: Generated Statements***
+vMonth=NUMBERTOSTRING(MONTH(vDate));
+CellPutN(CellGetN('Sales_Plan',Subsidiaries,Channel,vProducts,vMonth,Version,'Quantity')+Quantity,'Sales_Plan',Subsidiaries,Channel,vProducts,vMonth,V
+ersion,'Quantity');
+CellPutN(CellGetN('Sales_Plan',Subsidiaries,Channel,vProducts,vMonth,Version,'Cash Discount')+vCashDiscount,'Sales_Plan',Subsidiaries,Channel,vProduct
+s,vMonth,Version,'Cash Discount');
+CellPutN(CellGetN('Sales_Plan',Subsidiaries,Channel,vProducts,vMonth,Version,'Volume Discount')+vVolumeDiscount,'Sales_Plan',Subsidiaries,Channel,vPro
+ducts,vMonth,Version,'Volume Discount');
+CellPutN(CellGetN('Sales_Plan',Subsidiaries,Channel,vProducts,vMonth,Version,'Freight')+Freight,'Sales_Plan',Subsidiaries,Channel,vProducts,vMonth,Ver
+sion,'Freight');
+CellPutN(CellGetN('Sales_Plan',Subsidiaries,Channel,vProducts,vMonth,Version,'Returns and Allowances')+vReturnsAndAllowances,'Sales_Plan',Subsidiaries
+,Channel,vProducts,vMonth,Version,'Returns and Allowances');
+#****End: Generated Statements****
+
+#endregion
+#region Epilog
+
+#****Begin: Generated Statements***
+CUBESETLOGCHANGES('Sales_Plan', OldCubeLogChanges);
+#****End: Generated Statements****
+#endregion

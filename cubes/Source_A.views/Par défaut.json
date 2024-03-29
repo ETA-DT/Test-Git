@@ -1,0 +1,86 @@
+{
+	"@type":"NativeView",
+	"Name":"Par défaut",
+	"Columns":
+	[
+		{
+			"Subset":
+			{
+				"Hierarchy":
+				{
+					"@id":"Dimensions('Sales_Plan_Measures')/Hierarchies('Sales_Plan_Measures')"
+				},
+				"Elements":
+				[
+					{
+						"@id":"Dimensions('Sales_Plan_Measures')/Hierarchies('Sales_Plan_Measures')/Elements('Quantity')"
+					},
+					{
+						"@id":"Dimensions('Sales_Plan_Measures')/Hierarchies('Sales_Plan_Measures')/Elements('Unit Sale Price')"
+					}
+				]
+			}
+		}
+	],
+	"Rows":
+	[
+		{
+			"Subset":
+			{
+				"Hierarchy":
+				{
+					"@id":"Dimensions('Product')/Hierarchies('Product')"
+				},
+				"Elements":
+				[
+					{
+						"@id":"Dimensions('Product')/Hierarchies('Product')/Elements('Total')"
+					},
+					{
+						"@id":"Dimensions('Product')/Hierarchies('Product')/Elements('S Series')"
+					},
+					{
+						"@id":"Dimensions('Product')/Hierarchies('Product')/Elements('S Series Sedan')"
+					},
+					{
+						"@id":"Dimensions('Product')/Hierarchies('Product')/Elements('S Series 3.4 L Sedan')"
+					},
+					{
+						"@id":"Dimensions('Product')/Hierarchies('Product')/Elements('S Series 1.8 L Sedan')"
+					},
+					{
+						"@id":"Dimensions('Product')/Hierarchies('Product')/Elements('S Series 2.5 L Sedan')"
+					},
+					{
+						"@id":"Dimensions('Product')/Hierarchies('Product')/Elements('S Series 3.0 L Sedan')"
+					},
+					{
+						"@id":"Dimensions('Product')/Hierarchies('Product')/Elements('S Series 2.0 L Sedan')"
+					},
+					{
+						"@id":"Dimensions('Product')/Hierarchies('Product')/Elements('S Series Wagon')"
+					},
+					{
+						"@id":"Dimensions('Product')/Hierarchies('Product')/Elements('S Series 4WD')"
+					},
+					{
+						"@id":"Dimensions('Product')/Hierarchies('Product')/Elements('L Series')"
+					},
+					{
+						"@id":"Dimensions('Product')/Hierarchies('Product')/Elements('T Series')"
+					},
+					{
+						"@id":"Dimensions('Product')/Hierarchies('Product')/Elements('SUV')"
+					},
+					{
+						"@id":"Dimensions('Product')/Hierarchies('Product')/Elements('Sports')"
+					}
+				]
+			}
+		}
+	],
+	"Titles":[],
+	"SuppressEmptyColumns":false,
+	"SuppressEmptyRows":false,
+	"FormatString":"0.#########"
+}

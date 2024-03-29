@@ -1,0 +1,12 @@
+{
+	"@type":"Dimension",
+	"Name":"COLLABORATEURS",
+	"Hierarchies@Code.links":
+	[
+		"COLLABORATEURS.hierarchies/COLLABORATEURS.json"
+	],
+	"DefaultHierarchy":
+	{
+		"@id":"Dimensions('COLLABORATEURS')/Hierarchies('COLLABORATEURS')"
+	}
+}

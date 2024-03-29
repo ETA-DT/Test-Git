@@ -1,0 +1,13 @@
+{
+	"@type":"Process",
+	"Name":"#_TEST_YASMINE",
+	"HasSecurityAccess":false,
+	"Code@Code.link":"#_TEST_YASMINE.ti",
+	"UIData":"CubeAction=1511€DataAction=1503€CubeLogChanges=0€",
+	"DataSource":
+	{
+		"Type":"None"
+	},
+	"Parameters":[],
+	"Variables":[]
+}

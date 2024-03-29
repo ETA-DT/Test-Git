@@ -1,0 +1,37 @@
+{
+	"@type":"Subset",
+	"Name":"Americas",
+	"Elements":
+	[
+		{
+			"@id":"Dimensions('Region')/Hierarchies('Region')/Elements('Americas')"
+		},
+		{
+			"@id":"Dimensions('Region')/Hierarchies('Region')/Elements('North America')"
+		},
+		{
+			"@id":"Dimensions('Region')/Hierarchies('Region')/Elements('Canada')"
+		},
+		{
+			"@id":"Dimensions('Region')/Hierarchies('Region')/Elements('Mexico')"
+		},
+		{
+			"@id":"Dimensions('Region')/Hierarchies('Region')/Elements('United States')"
+		},
+		{
+			"@id":"Dimensions('Region')/Hierarchies('Region')/Elements('South America')"
+		},
+		{
+			"@id":"Dimensions('Region')/Hierarchies('Region')/Elements('Argentina')"
+		},
+		{
+			"@id":"Dimensions('Region')/Hierarchies('Region')/Elements('Brazil')"
+		},
+		{
+			"@id":"Dimensions('Region')/Hierarchies('Region')/Elements('Chile')"
+		},
+		{
+			"@id":"Dimensions('Region')/Hierarchies('Region')/Elements('Uruguay')"
+		}
+	]
+}

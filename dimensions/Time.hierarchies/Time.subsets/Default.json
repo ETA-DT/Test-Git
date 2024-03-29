@@ -1,0 +1,13 @@
+{
+	"@type":"Subset",
+	"Name":"Default",
+	"Elements":
+	[
+		{
+			"@id":"Dimensions('Time')/Hierarchies('Time')/Elements('2017')"
+		},
+		{
+			"@id":"Dimensions('Time')/Hierarchies('Time')/Elements('2018')"
+		}
+	]
+}

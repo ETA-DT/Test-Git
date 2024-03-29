@@ -1,0 +1,294 @@
+{
+	"@type":"NativeView",
+	"Name":"Revenue",
+	"Columns":
+	[
+		{
+			"Subset":
+			{
+				"Hierarchy":
+				{
+					"@id":"Dimensions('Months')/Hierarchies('Months')"
+				},
+				"Elements":
+				[
+					{
+						"@id":"Dimensions('Months')/Hierarchies('Months')/Elements('Jan')"
+					},
+					{
+						"@id":"Dimensions('Months')/Hierarchies('Months')/Elements('Feb')"
+					},
+					{
+						"@id":"Dimensions('Months')/Hierarchies('Months')/Elements('Mar')"
+					},
+					{
+						"@id":"Dimensions('Months')/Hierarchies('Months')/Elements('Apr')"
+					},
+					{
+						"@id":"Dimensions('Months')/Hierarchies('Months')/Elements('May')"
+					},
+					{
+						"@id":"Dimensions('Months')/Hierarchies('Months')/Elements('Jun')"
+					},
+					{
+						"@id":"Dimensions('Months')/Hierarchies('Months')/Elements('Jul')"
+					},
+					{
+						"@id":"Dimensions('Months')/Hierarchies('Months')/Elements('Aug')"
+					},
+					{
+						"@id":"Dimensions('Months')/Hierarchies('Months')/Elements('Sep')"
+					},
+					{
+						"@id":"Dimensions('Months')/Hierarchies('Months')/Elements('Oct')"
+					},
+					{
+						"@id":"Dimensions('Months')/Hierarchies('Months')/Elements('Nov')"
+					},
+					{
+						"@id":"Dimensions('Months')/Hierarchies('Months')/Elements('Dec')"
+					}
+				]
+			}
+		}
+	],
+	"Rows":
+	[
+		{
+			"Subset":
+			{
+				"Hierarchy":
+				{
+					"@id":"Dimensions('Sales_Plan_Measures')/Hierarchies('Sales_Plan_Measures')"
+				},
+				"Elements":
+				[
+					{
+						"@id":"Dimensions('Sales_Plan_Measures')/Hierarchies('Sales_Plan_Measures')/Elements('Quantity')"
+					},
+					{
+						"@id":"Dimensions('Sales_Plan_Measures')/Hierarchies('Sales_Plan_Measures')/Elements('Unit Sale Price')"
+					},
+					{
+						"@id":"Dimensions('Sales_Plan_Measures')/Hierarchies('Sales_Plan_Measures')/Elements('GROSS SALES REVENUE')"
+					},
+					{
+						"@id":"Dimensions('Sales_Plan_Measures')/Hierarchies('Sales_Plan_Measures')/Elements('Returns and Allowances')"
+					},
+					{
+						"@id":"Dimensions('Sales_Plan_Measures')/Hierarchies('Sales_Plan_Measures')/Elements('Cash Discount')"
+					},
+					{
+						"@id":"Dimensions('Sales_Plan_Measures')/Hierarchies('Sales_Plan_Measures')/Elements('Volume Discount')"
+					},
+					{
+						"@id":"Dimensions('Sales_Plan_Measures')/Hierarchies('Sales_Plan_Measures')/Elements('TOTAL DISCOUNTS AND ALLOWANCES')"
+					},
+					{
+						"@id":"Dimensions('Sales_Plan_Measures')/Hierarchies('Sales_Plan_Measures')/Elements('Freight')"
+					},
+					{
+						"@id":"Dimensions('Sales_Plan_Measures')/Hierarchies('Sales_Plan_Measures')/Elements('NET SALES REVENUE')"
+					},
+					{
+						"@id":"Dimensions('Sales_Plan_Measures')/Hierarchies('Sales_Plan_Measures')/Elements('Unit Cost')"
+					},
+					{
+						"@id":"Dimensions('Sales_Plan_Measures')/Hierarchies('Sales_Plan_Measures')/Elements('COST OF SALES')"
+					},
+					{
+						"@id":"Dimensions('Sales_Plan_Measures')/Hierarchies('Sales_Plan_Measures')/Elements('GROSS MARGIN')"
+					},
+					{
+						"@id":"Dimensions('Sales_Plan_Measures')/Hierarchies('Sales_Plan_Measures')/Elements('GROSS MARGIN %')"
+					},
+					{
+						"@id":"Dimensions('Sales_Plan_Measures')/Hierarchies('Sales_Plan_Measures')/Elements('Seasons')"
+					}
+				]
+			}
+		}
+	],
+	"Titles":
+	[
+		{
+			"Subset":
+			{
+				"Hierarchy":
+				{
+					"@id":"Dimensions('Subsidiaries')/Hierarchies('Subsidiaries')"
+				},
+				"Expression":"TM1SubsetAll([Subsidiaries])"
+			},
+			"Selected":
+			{
+				"@id":"Dimensions('Subsidiaries')/Hierarchies('Subsidiaries')/Elements('GO Americas')"
+			}
+		},
+		{
+			"Subset":
+			{
+				"Hierarchy":
+				{
+					"@id":"Dimensions('Channels')/Hierarchies('Channels')"
+				},
+				"Elements":
+				[
+					{
+						"@id":"Dimensions('Channels')/Hierarchies('Channels')/Elements('ALL CHANNELS')"
+					},
+					{
+						"@id":"Dimensions('Channels')/Hierarchies('Channels')/Elements('Department Store')"
+					},
+					{
+						"@id":"Dimensions('Channels')/Hierarchies('Channels')/Elements('Direct Marketing')"
+					},
+					{
+						"@id":"Dimensions('Channels')/Hierarchies('Channels')/Elements('Equipment Rental Store')"
+					},
+					{
+						"@id":"Dimensions('Channels')/Hierarchies('Channels')/Elements('Eyewear Store')"
+					},
+					{
+						"@id":"Dimensions('Channels')/Hierarchies('Channels')/Elements('Golf Shop')"
+					},
+					{
+						"@id":"Dimensions('Channels')/Hierarchies('Channels')/Elements('Outdoors Shop')"
+					},
+					{
+						"@id":"Dimensions('Channels')/Hierarchies('Channels')/Elements('Sports Store')"
+					},
+					{
+						"@id":"Dimensions('Channels')/Hierarchies('Channels')/Elements('Warehouse Store')"
+					}
+				]
+			},
+			"Selected":
+			{
+				"@id":"Dimensions('Channels')/Hierarchies('Channels')/Elements('Department Store')"
+			}
+		},
+		{
+			"Subset":
+			{
+				"Hierarchy":
+				{
+					"@id":"Dimensions('Products')/Hierarchies('Products')"
+				},
+				"Elements":
+				[
+					{
+						"@id":"Dimensions('Products')/Hierarchies('Products')/Elements('TOTAL PRODUCTS')"
+					},
+					{
+						"@id":"Dimensions('Products')/Hierarchies('Products')/Elements('CAMPING EQUIPMENT')"
+					},
+					{
+						"@id":"Dimensions('Products')/Hierarchies('Products')/Elements('Cooking Gear')"
+					},
+					{
+						"@id":"Dimensions('Products')/Hierarchies('Products')/Elements('Lanterns')"
+					},
+					{
+						"@id":"Dimensions('Products')/Hierarchies('Products')/Elements('Packs')"
+					},
+					{
+						"@id":"Dimensions('Products')/Hierarchies('Products')/Elements('Sleeping Bags')"
+					},
+					{
+						"@id":"Dimensions('Products')/Hierarchies('Products')/Elements('Tents')"
+					},
+					{
+						"@id":"Dimensions('Products')/Hierarchies('Products')/Elements('GOLF EQUIPMENT')"
+					},
+					{
+						"@id":"Dimensions('Products')/Hierarchies('Products')/Elements('Golf Accessories')"
+					},
+					{
+						"@id":"Dimensions('Products')/Hierarchies('Products')/Elements('Irons')"
+					},
+					{
+						"@id":"Dimensions('Products')/Hierarchies('Products')/Elements('Putters')"
+					},
+					{
+						"@id":"Dimensions('Products')/Hierarchies('Products')/Elements('Woods')"
+					},
+					{
+						"@id":"Dimensions('Products')/Hierarchies('Products')/Elements('MOUNTAINEERING EQUIPMENT')"
+					},
+					{
+						"@id":"Dimensions('Products')/Hierarchies('Products')/Elements('Climbing Accessories')"
+					},
+					{
+						"@id":"Dimensions('Products')/Hierarchies('Products')/Elements('Rope')"
+					},
+					{
+						"@id":"Dimensions('Products')/Hierarchies('Products')/Elements('Safety')"
+					},
+					{
+						"@id":"Dimensions('Products')/Hierarchies('Products')/Elements('Tools')"
+					},
+					{
+						"@id":"Dimensions('Products')/Hierarchies('Products')/Elements('OUTDOOR PROTECTION')"
+					},
+					{
+						"@id":"Dimensions('Products')/Hierarchies('Products')/Elements('First Aid')"
+					},
+					{
+						"@id":"Dimensions('Products')/Hierarchies('Products')/Elements('Insect Repellents')"
+					},
+					{
+						"@id":"Dimensions('Products')/Hierarchies('Products')/Elements('Sunscreen')"
+					},
+					{
+						"@id":"Dimensions('Products')/Hierarchies('Products')/Elements('PERSONAL ACCESSORIES')"
+					},
+					{
+						"@id":"Dimensions('Products')/Hierarchies('Products')/Elements('Binoculars')"
+					},
+					{
+						"@id":"Dimensions('Products')/Hierarchies('Products')/Elements('Eyewear')"
+					},
+					{
+						"@id":"Dimensions('Products')/Hierarchies('Products')/Elements('Knives')"
+					},
+					{
+						"@id":"Dimensions('Products')/Hierarchies('Products')/Elements('Navigation')"
+					},
+					{
+						"@id":"Dimensions('Products')/Hierarchies('Products')/Elements('Watches')"
+					}
+				]
+			},
+			"Selected":
+			{
+				"@id":"Dimensions('Products')/Hierarchies('Products')/Elements('Cooking Gear')"
+			}
+		},
+		{
+			"Subset":
+			{
+				"Hierarchy":
+				{
+					"@id":"Dimensions('Versions')/Hierarchies('Versions')"
+				},
+				"Elements":
+				[
+					{
+						"@id":"Dimensions('Versions')/Hierarchies('Versions')/Elements('Budget Version 1')"
+					},
+					{
+						"@id":"Dimensions('Versions')/Hierarchies('Versions')/Elements('Budget Version 2')"
+					}
+				]
+			},
+			"Selected":
+			{
+				"@id":"Dimensions('Versions')/Hierarchies('Versions')/Elements('Budget Version 1')"
+			}
+		}
+	],
+	"SuppressEmptyColumns":false,
+	"SuppressEmptyRows":false,
+	"FormatString":"0.#########"
+}

@@ -1,0 +1,12 @@
+{
+	"@type":"Dimension",
+	"Name":"Ratio_Indic",
+	"Hierarchies@Code.links":
+	[
+		"Ratio_Indic.hierarchies/Ratio_Indic.json"
+	],
+	"DefaultHierarchy":
+	{
+		"@id":"Dimensions('Ratio_Indic')/Hierarchies('Ratio_Indic')"
+	}
+}

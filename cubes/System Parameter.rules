@@ -1,0 +1,32 @@
+# Global
+[] = S: IF(ELLEV('System Parameter', !System Parameter) > 0, '', CONTINUE);
+[] = N: IF(DB('System Parameter', !System Parameter, 'String') @= 'True', 1, CONTINUE);
+[] = N: IF(DB('System Parameter', !System Parameter, 'String') @= 'False', 0, CONTINUE);
+[] = N: IF(DB('System Parameter', !System Parameter, 'String') @<> '', Numbr(DB('System Parameter', !System Parameter, 'String')), CONTINUE);
+
+# Server
+['Server_Time', 'Numeric'] = N: NOW;
+['Server_Time', 'String'] = S: TIMST(NOW, ' \Y-\m-\d \h:\i:\s', 1);
+
+# Directory
+['Backup_Directory', 'String'] = S: DB('System Parameter', 'Server_Directory', !Measure System Parameter) | '\' | DB('System Parameter', 'Server_Name', !Measure System Parameter) | '\Backup';
+['Config_Directory', 'String'] = S: DB('System Parameter', 'Server_Directory', !Measure System Parameter) | '\' | DB('System Parameter', 'Server_Name', !Measure System Parameter) | '\Config';
+['Data_Directory', 'String'] = S: DB('System Parameter', 'Server_Directory', !Measure System Parameter) | '\' | DB('System Parameter', 'Server_Name', !Measure System Parameter) | '\Data';
+['Index_Directory', 'String'] = S: DB('System Parameter', 'Server_Directory', !Measure System Parameter) | '\' | DB('System Parameter', 'Server_Name', !Measure System Parameter) | '\Index';
+['Interface_Directory', 'String'] = S: DB('System Parameter', 'Server_Directory', !Measure System Parameter) | '\' | DB('System Parameter', 'Server_Name', !Measure System Parameter) | '\Interface';
+['Lib_Directory', 'String'] = S: DB('System Parameter', 'Server_Directory', !Measure System Parameter) | '\' | DB('System Parameter', 'Server_Name', !Measure System Parameter) | '\Lib';
+['Log_Directory', 'String'] = S: DB('System Parameter', 'Server_Directory', !Measure System Parameter) | '\' | DB('System Parameter', 'Server_Name', !Measure System Parameter) | '\Log';
+['Rawstore_Directory', 'String'] = S: DB('System Parameter', 'Server_Directory', !Measure System Parameter) | '\' | DB('System Parameter', 'Server_Name', !Measure System Parameter) | '\Rawstore';
+['Script_Directory', 'String'] = S: DB('System Parameter', 'Server_Directory', !Measure System Parameter) | '\' | DB('System Parameter', 'Server_Name', !Measure System Parameter) | '\Script';
+['Temp_Directory', 'String'] = S: DB('System Parameter', 'Server_Directory', !Measure System Parameter) | '\' | DB('System Parameter', 'Server_Name', !Measure System Parameter) | '\Temp';
+
+['Inbound_Directory', 'String'] = S: DB('System Parameter', 'Interface_Directory', !Measure System Parameter) | '\Inbound';
+['Dimension_Directory', 'String'] = S: DB('System Parameter', 'Inbound_Directory', !Measure System Parameter) | '\Dimension';
+['Notification_Directory', 'String'] = S: DB('System Parameter', 'Inbound_Directory', !Measure System Parameter) | '\Notification';
+
+['Outbound_Directory', 'String'] = S: DB('System Parameter', 'Interface_Directory', !Measure System Parameter) | '\Outbound';
+['Snapshot_Directory', 'String'] = S: DB('System Parameter', 'Outbound_Directory', !Measure System Parameter) | '\Snapshot';
+['Package_Directory', 'String'] = S: DB('System Parameter', 'Outbound_Directory', !Measure System Parameter) | '\Package';
+
+# Tm1Web
+['Tm1Web_Url', 'String'] = S: 'http://' | TRIM(DB('System Parameter', 'Tm1Web_Host', !Measure System Parameter)) | IF(TRIM(DB('System Parameter', 'Tm1Web_Port', !Measure System Parameter)) @<> '', ':' | TRIM(DB('System Parameter', 'Tm1Web_Port', !Measure System Parameter)),'') | '/tm1web';

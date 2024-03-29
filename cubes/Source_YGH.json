@@ -1,0 +1,17 @@
+{
+	"@type":"Cube",
+	"Name":"Source_YGH",
+	"Dimensions":
+	[
+		{
+			"@id":"Dimensions('Product')"
+		},
+		{
+			"@id":"Dimensions('Sales_Plan_Measures')"
+		}
+	],
+	"Views@Code.links":
+	[
+		"Source_YGH.views/Afficher1.json"
+	]
+}

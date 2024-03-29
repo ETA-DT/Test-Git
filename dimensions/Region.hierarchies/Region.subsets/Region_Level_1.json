@@ -1,0 +1,5 @@
+{
+	"@type":"Subset",
+	"Name":"Region_Level_1",
+	"Expression":"{{[Region].[Region].levels(2).MEMBERS}}"
+}

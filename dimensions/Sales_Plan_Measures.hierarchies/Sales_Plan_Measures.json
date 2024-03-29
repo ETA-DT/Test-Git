@@ -1,0 +1,68 @@
+{
+	"@type":"Hierarchy",
+	"Name":"Sales_Plan_Measures",
+	"Elements":
+	[
+		{
+			"Name":"Seasons",
+			"Type":"String"
+		},
+		{
+			"Name":"Quantity",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Unit Sale Price",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"GROSS SALES REVENUE",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Returns and Allowances",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Cash Discount",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Volume Discount",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"TOTAL DISCOUNTS AND ALLOWANCES",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Freight",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"NET SALES REVENUE",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Unit Cost",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"COST OF SALES",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"GROSS MARGIN",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"GROSS MARGIN %",
+			"Type":"Numeric"
+		}
+	],
+	"Subsets@Code.links":
+	[
+		"Sales_Plan_Measures.subsets/BTA_Purge.json",
+		"Sales_Plan_Measures.subsets/BTA_Subset.json"
+	]
+}

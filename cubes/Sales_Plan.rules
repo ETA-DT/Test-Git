@@ -1,0 +1,1 @@
+['Unit Sale Price']=N:DB('Price_and_Cost',!Channels,!Products,!Months,!Versions,'Unit Sale Price');

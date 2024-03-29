@@ -1,0 +1,17 @@
+{
+	"@type":"Cube",
+	"Name":"RATIO",
+	"Dimensions":
+	[
+		{
+			"@id":"Dimensions('Product')"
+		},
+		{
+			"@id":"Dimensions('TAILLES')"
+		},
+		{
+			"@id":"Dimensions('Ratio_Indic')"
+		}
+	],
+	"Views@Code.links":[]
+}

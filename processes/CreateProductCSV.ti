@@ -1,0 +1,27 @@
+#region Prolog
+
+#****Begin: Generated Statements***
+DIMENSIONDELETEALLELEMENTS('Products');
+DIMENSIONSORTORDER('Products','BYNAME','ASCENDING','BYHIERARCHY','ASCENDING');
+#****End: Generated Statements****
+#endregion
+#region Metadata
+
+#****Begin: Generated Statements***
+DIMENSIONELEMENTINSERT('Products','',vProducts,'n');
+DIMENSIONELEMENTINSERT('Products','',vProductTypes,'c');
+DIMENSIONELEMENTINSERT('Products','',vTotalProducts,'c');
+DIMENSIONELEMENTCOMPONENTADD('Products',vProductTypes,vProducts,1.000000);
+DIMENSIONELEMENTCOMPONENTADD('Products',vTotalProducts,vProductTypes,1.000000);
+#****End: Generated Statements****
+#endregion
+#region Data
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+#endregion
+#region Epilog
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+#endregion

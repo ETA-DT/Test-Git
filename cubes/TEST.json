@@ -1,0 +1,15 @@
+{
+	"@type":"Cube",
+	"Name":"TEST",
+	"Dimensions":
+	[
+		{
+			"@id":"Dimensions('Region')"
+		},
+		{
+			"@id":"Dimensions('Indicateur')"
+		}
+	],
+	"Rules@Code.link":"TEST.rules",
+	"Views@Code.links":[]
+}

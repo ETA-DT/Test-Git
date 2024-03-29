@@ -1,0 +1,13 @@
+SKIPCHECK;
+
+['Commission','Amount'] = N: DB('Commissions', !Subsidiaries, !Months, !Versions, 'Commission');
+['PENSION PLAN', 'Amount' ] = N:['SALARIES', 'Amount']  *['PENSION PLAN','Percent'] ;
+['SOCIAL SECURITY', 'Amount' ] = N:['SALARIES', 'Amount']  *['SOCIAL SECURITY','Percent'] ;
+['HEALTH INSURANCE','Amount' ] = N:['SALARIES', 'Amount']  *['HEALTH INSURANCE','Percent'] ;
+
+
+FEEDERS;
+['SALARIES', 'Amount'] => ['HEALTH INSURANCE','Amount'], ['PENSION PLAN','Amount'],
+					['SOCIAL SECURITY','Amount'];
+
+

@@ -1,0 +1,14 @@
+{
+	"@type":"Cube",
+	"Name":"Cible_LSA",
+	"Dimensions":
+	[
+		{
+			"@id":"Dimensions('Product')"
+		},
+		{
+			"@id":"Dimensions('Sales_Plan_Measures')"
+		}
+	],
+	"Views@Code.links":[]
+}

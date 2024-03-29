@@ -1,0 +1,19 @@
+{
+	"@type":"Cube",
+	"Name":"Source_A",
+	"Dimensions":
+	[
+		{
+			"@id":"Dimensions('Product')"
+		},
+		{
+			"@id":"Dimensions('Sales_Plan_Measures')"
+		}
+	],
+	"Views@Code.links":
+	[
+		"Source_A.views/bta.json",
+		"Source_A.views/Par défaut.json",
+		"Source_A.views/YGH.json"
+	]
+}

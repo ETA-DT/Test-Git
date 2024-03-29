@@ -1,0 +1,16 @@
+{
+	"@type":"Hierarchy",
+	"Name":"Expense_Measures",
+	"Elements":
+	[
+		{
+			"Name":"Amount",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Percent",
+			"Type":"Numeric"
+		}
+	],
+	"Subsets@Code.links":[]
+}

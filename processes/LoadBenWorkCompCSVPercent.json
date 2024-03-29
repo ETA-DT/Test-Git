@@ -1,0 +1,76 @@
+{
+	"@type":"Process",
+	"Name":"LoadBenWorkCompCSVPercent",
+	"HasSecurityAccess":false,
+	"Code@Code.link":"LoadBenWorkCompCSVPercent.ti",
+	"UIData":"CubeAction=1500€DataAction=1503€CubeName=Expenses€CubeLogChanges=0€MeasuresDim=Expenses€MeasuresDimAction=AsIs€MeasuresDimElemSortType=ByInput€MeasuresDimElemSortSense=DESCENDING€",
+	"VariablesUIData":
+	[
+		"VarType=32€ColType=825€VarDimension=Versions€VarDimAction=AsIs€VarElemType=Numeric€VarDimElemSortType=ByInput€VarDimElemSortSense=ASCENDING€",
+		"VarType=32€ColType=825€VarDimension=Subsidiaries€VarDimAction=AsIs€VarElemType=Numeric€VarDimElemSortType=ByInput€VarDimElemSortSense=ASCENDING€",
+		"VarType=32€ColType=825€VarDimension=Months€VarDimAction=AsIs€VarElemType=Numeric€VarDimElemSortType=ByInput€VarDimElemSortSense=ASCENDING€",
+		"VarType=33€ColType=826€MeasuresElemVar=PENSION PLAN€MeasuresElemVarType=Numeric€",
+		"VarType=33€ColType=826€MeasuresElemVar=SOCIAL SECURITY€MeasuresElemVarType=Numeric€",
+		"VarType=33€ColType=826€MeasuresElemVar=HEALTH INSURANCE€MeasuresElemVarType=Numeric€",
+		"IgnoredInputVarName=vWorkersComp€VarType=33€ColType=1165€",
+		"VarName=vMeasures€VarType=32€ColType=825€VarFormula=vMeasures='Percent';:€VarFormulaDestination=BOTH€VarDimension=Expense_Measures€VarDimAction=AsIs€VarElemType=Numeric€VarDimElemSortType=ByInput€VarDimElemSortSense=ASCENDING€"
+	],
+	"DataSource":
+	{
+		"Type":"ASCII",
+		"asciiDecimalSeparator":".",
+		"asciiDelimiterChar":",",
+		"asciiDelimiterType":"Character",
+		"asciiHeaderRecords":1,
+		"asciiQuoteCharacter":"\"",
+		"asciiThousandSeparator":",",
+		"dataSourceNameForClient":"C:\\Edcognos\\P6502\\GreatOutdoors\\SourceFiles\\Ben Work Comp.csv",
+		"dataSourceNameForServer":"C:\\Edcognos\\P6502\\GreatOutdoors\\SourceFiles\\Ben Work Comp.csv"
+	},
+	"Parameters":[],
+	"Variables":
+	[
+		{
+			"Name":"Versions",
+			"Type":"String",
+			"Position":1,
+			"StartByte":0,
+			"EndByte":0
+		},
+		{
+			"Name":"Subsidiaries",
+			"Type":"String",
+			"Position":2,
+			"StartByte":0,
+			"EndByte":0
+		},
+		{
+			"Name":"vMonth",
+			"Type":"String",
+			"Position":3,
+			"StartByte":0,
+			"EndByte":0
+		},
+		{
+			"Name":"vPension",
+			"Type":"Numeric",
+			"Position":4,
+			"StartByte":0,
+			"EndByte":0
+		},
+		{
+			"Name":"vSocialSec",
+			"Type":"Numeric",
+			"Position":5,
+			"StartByte":0,
+			"EndByte":0
+		},
+		{
+			"Name":"vHealth",
+			"Type":"Numeric",
+			"Position":6,
+			"StartByte":0,
+			"EndByte":0
+		}
+	]
+}

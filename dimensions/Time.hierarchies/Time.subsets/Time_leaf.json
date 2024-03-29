@@ -1,0 +1,5 @@
+{
+	"@type":"Subset",
+	"Name":"Time_leaf",
+	"Expression":"{EXCEPT(TM1FILTERBYLEVEL(TM1SUBSETALL([Time].[Time]) , 0) , {[Time].[Time].[2020],[Time].[Time].[2021],[Time].[Time].[2022],[Time].[Time].[2023],[Time].[Time].[2024],[Time].[Time].[2025]})}"
+}

@@ -1,0 +1,12 @@
+{
+	"@type":"Hierarchy",
+	"Name":"_ElementAttributes_Commission_Measures",
+	"Elements":
+	[
+		{
+			"Name":"Format",
+			"Type":"String"
+		}
+	],
+	"Subsets@Code.links":[]
+}

@@ -1,0 +1,20 @@
+{
+	"@type":"Hierarchy",
+	"Name":"Measure System Parameter",
+	"Elements":
+	[
+		{
+			"Name":"String",
+			"Type":"String"
+		},
+		{
+			"Name":"Numeric",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Note",
+			"Type":"String"
+		}
+	],
+	"Subsets@Code.links":[]
+}

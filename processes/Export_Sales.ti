@@ -1,0 +1,116 @@
+#region Prolog
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+ # -expliquer le processus simplement - 
+
+#Yasmine est en train de coder 07-11-2022
+# creation du process export_sales qui permet d'exportet les données en fichier tct 
+
+
+
+
+# - Déclaration des variables
+
+
+vCube = ' Sales';
+vViewName = GetProcessName();
+vSubsetName = GetProcessName();
+
+vViewNamePurge= GetProcessName() | 'Purge';
+vSubsetNamePurge = GetProcessName() | 'Purge';
+vCubeCible ='Sales_Test';
+
+###################*
+
+#-- définition de la source de données
+DataSourceType = 'View';
+DataSourceCubeView = vViewName;
+DataSourceASCIIDelimiter = ' ; ' ;
+DataSourceASCIIQuoteCharacter = ' ';
+
+##################################
+
+#-- création de la vue source
+
+ViewDestroy (vCube, vViewName);
+ViewCreate (vCube, vViewName);
+
+vDim='Version';
+SubsetDestroy(vDim,vSubsetName);
+SubsetCreate(vDim,vSubsetName);
+SubsetElementInsert(vDim,vSubsetName,'Budget', 1);
+ViewSubsetAssign(vCube,vViewName,vDim,vSubsetName);
+
+vDim='Product';
+SubsetDestroy(vDim,vSubsetName);
+SubsetCreate(vDim,vSubsetName);
+i=1;
+iMax=DimSiz(vDim);
+While (i<=iMax);
+	vElem = DimNm(vDim,i);
+	IF (Ellev(vDim,vElem)=0 & Elisanc (vDim,pProduct,vElem)=1);
+		SubsetElementInsert (vDim,vSubsetName, vElem,1);
+	Endif;
+	i=i+1;
+End;
+
+ViewSubsetAssign (vCube, vViewName, vDim, vSubsetName);
+
+vDim='Account';
+SubsetDestroy(vDim,vSubsetName);
+SubsetCreate (vDim,vSubsetName);
+SubsetElementInsert (vDim,vSubsetName, 'Sales',1);
+ViewSubsetAssign(vCube,vViewName,vDim,vSubsetName);
+
+vDim='Time';
+SubsetDestroy(vDim,vSubsetName);
+SubsetCreate(vDim,vSubsetName);
+i=1;
+iMax=DimSiz(vDim);
+While(i<=iMax);
+	vElem= DimNm(vDim,i);
+	IF (Ellev(vDim,vElem)=0 & Elisanc(vDim, pAnnee , vElem)=1);
+                     SubsetElementInsert(vDim,vSubsetName,vElem,1);
+	Endif;
+	i=i+1;
+End;
+
+
+ViewSubsetAssign (vCube, vViewName, vDim, vSubsetName);
+
+## --- 3 conditions
+
+ViewExtractSkipZeroesSet (vCube, vViewName, 1);
+ViewExtractSkipRuleValuesSet (vCube, vViewName, 0);
+ViewExtractSkipCalcsSet(vCube, vViewName, 1);
+#endregion
+#region Metadata
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+Textoutput('Export_Sales.txt',vCubeCible,version,region,product,account,v5,numbertostring(valeur));
+#endregion
+#region Data
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+Textoutput ( ' Export_Sales.txt', vCubeCible, version, region, product, account, v5, numbertostring(Valeur));
+#endregion
+#region Epilog
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+ViewDestroy(vCube, vViewName);
+t=1;
+WHILE (TABDIM(vCube,t) @<>'');
+     SubsetDestroy( TABDIM( vCube, t) , vViewName);
+t=t+1;
+END;
+
+
+#endregion

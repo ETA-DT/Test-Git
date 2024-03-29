@@ -1,0 +1,48 @@
+{
+	"@type":"MDXView",
+	"Name":"version low sales",
+	"MDX@Code.link":"version low sales.mdx",
+	"Meta" : 
+	{
+		"Aliases" : 
+		{
+			"[Product].[Product]" : "MEMBER_NAME"
+		},
+		"CalculatedMembers" : 
+		{
+			"[Time].[Time]" : 
+			[
+				
+				{
+					"Anchor" : "[Time].[Time].[2017]",
+					"Caption" : "Percentage (%) of total(2017)",
+					"InsertionPosition" : "AFTER",
+					"MemberID" : "[Time].[Time].[Percentage (%) of total(2017)]"
+				}
+			]
+		},
+		"ContextSets" : 
+		{
+			"[Account].[Account]" : 
+			{
+				"Expression" : "{[Account].[Account].[Gross Margin%], [Account].[Account].[Price], [Account].[Account].[Units], [Account].[Account].[Sales], [Account].[Account].[Variable Costs], [Account].[Account].[Promo1], [Account].[Account].[Promo2], [Account].[Account].[Promo3], [Account].[Account].[Promo4], [Account].[Account].[Promo5], [Account].[Account].[Base Costs], [Account].[Account].[Launch Date], [Account].[Account].[Units2]}"
+			},
+			"[Region].[Region]" : 
+			{
+				"Expression" : "{TM1SubsetAll([Region])}"
+			},
+			"[Version].[Version]" : 
+			{
+				"Expression" : "{TM1SubsetAll([Version])}"
+			}
+		},
+		"ExpandAboves" : 
+		{
+			"[Account].[Account]" : false,
+			"[Product].[Product]" : false,
+			"[Region].[Region]" : false,
+			"[Time].[Time]" : false,
+			"[Version].[Version]" : false
+		}
+	}
+}

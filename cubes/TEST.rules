@@ -1,0 +1,5 @@
+SKIPCHECK;
+
+['Product Category'] = S: IF( DB('TEST', !Region, 'FPM') @= 'x' , 'FPM', IF( DB('TEST', !Region, 'CPM') @= 'x' , 'CPM', 'AMP' ));
+
+FEEDERS;

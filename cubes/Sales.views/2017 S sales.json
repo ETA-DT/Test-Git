@@ -1,0 +1,35 @@
+{
+	"@type":"MDXView",
+	"Name":"2017 S sales",
+	"MDX@Code.link":"2017 S sales.mdx",
+	"Meta" : 
+	{
+		"Aliases" : 
+		{
+			"[Product].[Product]" : "MEMBER_NAME"
+		},
+		"ContextSets" : 
+		{
+			"[Account].[Account]" : 
+			{
+				"Expression" : "{[Account].[Account].[Gross Margin%], [Account].[Account].[Price], [Account].[Account].[Units], [Account].[Account].[Sales], [Account].[Account].[Variable Costs], [Account].[Account].[Promo1], [Account].[Account].[Promo2], [Account].[Account].[Promo3], [Account].[Account].[Promo4], [Account].[Account].[Promo5], [Account].[Account].[Base Costs], [Account].[Account].[Launch Date], [Account].[Account].[Units2]}"
+			},
+			"[Region].[Region]" : 
+			{
+				"Expression" : "{TM1SubsetAll([Region])}"
+			},
+			"[Version].[Version]" : 
+			{
+				"Expression" : "{TM1SubsetAll([Version])}"
+			}
+		},
+		"ExpandAboves" : 
+		{
+			"[Account].[Account]" : false,
+			"[Product].[Product]" : false,
+			"[Region].[Region]" : false,
+			"[Time].[Time]" : false,
+			"[Version].[Version]" : false
+		}
+	}
+}

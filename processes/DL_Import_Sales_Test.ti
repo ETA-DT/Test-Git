@@ -1,0 +1,83 @@
+#region Prolog
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+
+#Yasmine est en train de coder 08-11-2022
+# creation du process pour importer les données dans le cube Sales_Test depuis CSV
+
+
+
+
+# - Déclaration des variables
+
+
+vViewNamePurge= GetProcessName() | 'Purge';
+vSubsetNamePurge = GetProcessName() | 'Purge';
+vCubeCible ='Sales_Test';
+zFile = 'Import_Sales_Test.csv';
+
+#--definition du nom et de l'emplacement du fichier source
+File = 'D:\Applications\Tm1\CarSales_Test\Fichier\' | zFile;
+
+
+#-- definition de la source de données
+DataSourceNameForServer = File;
+
+
+#-- creation de la vue de purge 
+ViewDestroy(vCubeCible, vViewNamePurge);
+ViewCreate (vCubeCible, vViewNamePurge,0);
+
+
+vDim = 'Time';
+SubsetDestroy(vDim,vSubsetNamePurge);
+SubsetCreate(vDim,vSubsetNamePurge,0);
+i=1;
+iMax= DimSiz(vDim);
+while (i<=iMax);
+vElem= DimNm(vDim,i);
+	IF (Ellev(vDim,vElem)=0 & Elisanc(vDim, pAnnee, vElem)=1);
+		SubsetElementInsert (vDim,vSubsetNamePurge, vElem,1);
+	Endif;
+	i=i+1;
+End;
+
+ViewZeroOut(vCubeCible, vViewNamePurge);
+#endregion
+#region Metadata
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+#endregion
+#region Data
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+
+vDim =  'Time';
+i=1;
+iMax=DimSiz(vDim);
+while (i<=iMax);
+     vElem = DimNM(vDim,i);
+          if (Ellev(vDim,vElem)=0 & Elisanc(vDim,pAnnee, vElem)=1 & Attrs(vDim, vElem, 'Month') @=v5);
+
+                CellPutN( Value, vCubeCible, Version, region, product_test, account, velem);
+         endif;
+         i=i+1;
+end;
+#endregion
+#region Epilog
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+ViewDestroy( vCubeCible, vViewNamePurge);
+m=1;
+while (TABDIM (vCubeCible, m) @<>'');
+     SubsetDestroy( TABDIM( vCubeCible, m) ,vViewNamePurge);
+m=m+1;
+end;
+#endregion

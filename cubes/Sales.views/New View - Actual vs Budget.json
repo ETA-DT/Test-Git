@@ -1,0 +1,28 @@
+{
+	"@type":"MDXView",
+	"Name":"New View - Actual vs Budget",
+	"MDX@Code.link":"New View - Actual vs Budget.mdx",
+	"Meta" : 
+	{
+		"Aliases" : {},
+		"ContextSets" : 
+		{
+			"[Account].[Account]" : 
+			{
+				"Expression" : "{[Account].[Account].[Gross Margin%], [Account].[Account].[Price], [Account].[Account].[Units], [Account].[Account].[Sales], [Account].[Account].[Variable Costs], [Account].[Account].[Promo1], [Account].[Account].[Promo2], [Account].[Account].[Promo3], [Account].[Account].[Promo4], [Account].[Account].[Promo5], [Account].[Account].[Base Costs], [Account].[Account].[Launch Date], [Account].[Account].[Units2]}"
+			},
+			"[Region].[Region]" : 
+			{
+				"Expression" : "{TM1SubsetAll([Region])}"
+			}
+		},
+		"ExpandAboves" : 
+		{
+			"[Account].[Account]" : false,
+			"[Product].[Product]" : false,
+			"[Region].[Region]" : false,
+			"[Time].[Time]" : false,
+			"[Version].[Version]" : false
+		}
+	}
+}

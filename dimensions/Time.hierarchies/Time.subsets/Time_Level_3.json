@@ -1,0 +1,13 @@
+{
+	"@type":"Subset",
+	"Name":"Time_Level_3",
+	"Elements":
+	[
+		{
+			"@id":"Dimensions('Time')/Hierarchies('Time')/Elements('2017')"
+		},
+		{
+			"@id":"Dimensions('Time')/Hierarchies('Time')/Elements('2018')"
+		}
+	]
+}

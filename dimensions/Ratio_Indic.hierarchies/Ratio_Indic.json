@@ -1,0 +1,12 @@
+{
+	"@type":"Hierarchy",
+	"Name":"Ratio_Indic",
+	"Elements":
+	[
+		{
+			"Name":"Pourcentage",
+			"Type":"Numeric"
+		}
+	],
+	"Subsets@Code.links":[]
+}

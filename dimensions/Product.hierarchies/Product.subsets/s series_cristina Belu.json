@@ -1,0 +1,5 @@
+{
+	"@type":"Subset",
+	"Name":"s series_cristina Belu",
+	"Expression":"{{DISTINCT({DESCENDANTS([Product].[Product].[S Series])})}}"
+}

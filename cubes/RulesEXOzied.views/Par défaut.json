@@ -1,0 +1,68 @@
+{
+	"@type":"NativeView",
+	"Name":"Par défaut",
+	"Columns":
+	[
+		{
+			"Subset":
+			{
+				"Hierarchy":
+				{
+					"@id":"Dimensions('Price_and_Cost_Measures')/Hierarchies('Price_and_Cost_Measures')"
+				},
+				"Elements":
+				[
+					{
+						"@id":"Dimensions('Price_and_Cost_Measures')/Hierarchies('Price_and_Cost_Measures')/Elements('Unit Sale Price')"
+					},
+					{
+						"@id":"Dimensions('Price_and_Cost_Measures')/Hierarchies('Price_and_Cost_Measures')/Elements('Unit Cost')"
+					},
+					{
+						"@id":"Dimensions('Price_and_Cost_Measures')/Hierarchies('Price_and_Cost_Measures')/Elements('Margin')"
+					},
+					{
+						"@id":"Dimensions('Price_and_Cost_Measures')/Hierarchies('Price_and_Cost_Measures')/Elements('Margin %')"
+					},
+					{
+						"@id":"Dimensions('Price_and_Cost_Measures')/Hierarchies('Price_and_Cost_Measures')/Elements('Comment')"
+					}
+				]
+			}
+		}
+	],
+	"Rows":
+	[
+		{
+			"Subset":
+			{
+				"Hierarchy":
+				{
+					"@id":"Dimensions('Months')/Hierarchies('Months')"
+				},
+				"Elements":
+				[
+					{
+						"@id":"Dimensions('Months')/Hierarchies('Months')/Elements('Total Year')"
+					},
+					{
+						"@id":"Dimensions('Months')/Hierarchies('Months')/Elements('Q1')"
+					},
+					{
+						"@id":"Dimensions('Months')/Hierarchies('Months')/Elements('Q2')"
+					},
+					{
+						"@id":"Dimensions('Months')/Hierarchies('Months')/Elements('Q3')"
+					},
+					{
+						"@id":"Dimensions('Months')/Hierarchies('Months')/Elements('Q4')"
+					}
+				]
+			}
+		}
+	],
+	"Titles":[],
+	"SuppressEmptyColumns":false,
+	"SuppressEmptyRows":false,
+	"FormatString":"0.#########"
+}

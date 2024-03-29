@@ -1,0 +1,10 @@
+{
+	"@type":"Subset",
+	"Name":"BTA_Purge",
+	"Elements":
+	[
+		{
+			"@id":"Dimensions('Sales_Plan_Measures')/Hierarchies('Sales_Plan_Measures')/Elements('Quantity')"
+		}
+	]
+}

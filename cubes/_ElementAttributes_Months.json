@@ -1,0 +1,14 @@
+{
+	"@type":"Cube",
+	"Name":"_ElementAttributes_Months",
+	"Dimensions":
+	[
+		{
+			"@id":"Dimensions('Months')"
+		},
+		{
+			"@id":"Dimensions('}ElementAttributes_Months')"
+		}
+	],
+	"Views@Code.links":[]
+}

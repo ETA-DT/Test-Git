@@ -1,0 +1,145 @@
+{
+	"@type":"Hierarchy",
+	"Name":"Product_Test",
+	"ElementsSortType":"ByHierarchy",
+	"Elements":
+	[
+		{
+			"Name":"Total",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"S Series",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"S Series Sedan",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"S Series 3.4 L Sedan",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"S Series 1.8 L Sedan",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"S Series 2.5 L Sedan",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"S Series 3.0 L Sedan",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"S Series 2.0 L Sedan",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"S Series Wagon",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"S Series 1.8 L Wagon",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"S Series 2.0 L Wagon",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"S Series 2.5 L Wagon",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"S Series 3.0 L Wagon",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"S Series 3.4 L Wagon",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"S Series 4WD",
+			"Type":"Consolidated"
+		}
+	],
+	"Edges":
+	[
+		{
+			"ParentName":"Total",
+			"ComponentName":"S Series",
+			"Weight":1
+		},
+		{
+			"ParentName":"S Series",
+			"ComponentName":"S Series Sedan",
+			"Weight":1
+		},
+		{
+			"ParentName":"S Series",
+			"ComponentName":"S Series Wagon",
+			"Weight":1
+		},
+		{
+			"ParentName":"S Series",
+			"ComponentName":"S Series 4WD",
+			"Weight":1
+		},
+		{
+			"ParentName":"S Series Sedan",
+			"ComponentName":"S Series 3.4 L Sedan",
+			"Weight":1
+		},
+		{
+			"ParentName":"S Series Sedan",
+			"ComponentName":"S Series 1.8 L Sedan",
+			"Weight":1
+		},
+		{
+			"ParentName":"S Series Sedan",
+			"ComponentName":"S Series 2.5 L Sedan",
+			"Weight":1
+		},
+		{
+			"ParentName":"S Series Sedan",
+			"ComponentName":"S Series 3.0 L Sedan",
+			"Weight":1
+		},
+		{
+			"ParentName":"S Series Sedan",
+			"ComponentName":"S Series 2.0 L Sedan",
+			"Weight":1
+		},
+		{
+			"ParentName":"S Series Wagon",
+			"ComponentName":"S Series 1.8 L Wagon",
+			"Weight":1
+		},
+		{
+			"ParentName":"S Series Wagon",
+			"ComponentName":"S Series 2.0 L Wagon",
+			"Weight":1
+		},
+		{
+			"ParentName":"S Series Wagon",
+			"ComponentName":"S Series 2.5 L Wagon",
+			"Weight":1
+		},
+		{
+			"ParentName":"S Series Wagon",
+			"ComponentName":"S Series 3.0 L Wagon",
+			"Weight":1
+		},
+		{
+			"ParentName":"S Series Wagon",
+			"ComponentName":"S Series 3.4 L Wagon",
+			"Weight":1
+		}
+	],
+	"Subsets@Code.links":
+	[
+		"Product_Test.subsets/S Series.json"
+	]
+}

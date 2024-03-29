@@ -1,0 +1,12 @@
+{
+	"@type":"Hierarchy",
+	"Name":"Mensualisation-indic",
+	"Elements":
+	[
+		{
+			"Name":"Pourcentage",
+			"Type":"Numeric"
+		}
+	],
+	"Subsets@Code.links":[]
+}

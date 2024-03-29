@@ -1,0 +1,45 @@
+#region Prolog
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+
+DIMENSIONDELETEALLELEMENTS('UnevenSubsidiary');
+DIMENSIONSORTORDER('UnevenSubsidiary','ByName','ASCENDING','ByHierarchy','ASCENDING');
+#endregion
+#region Metadata
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+IF (vSubsidiary@<>vRegion);
+# create the 3 level hierarchy
+
+
+DIMENSIONELEMENTINSERT('UnevenSubsidiary','',vSubsidiary,'n');
+DIMENSIONELEMENTINSERT('UnevenSubsidiary','',vRegion,'c');
+DIMENSIONELEMENTINSERT('UnevenSubsidiary','',vTotalCompany,'c');
+DIMENSIONELEMENTCOMPONENTADD('UnevenSubsidiary',vRegion,vSubsidiary,1.000000);
+DIMENSIONELEMENTCOMPONENTADD('UnevenSubsidiary',vTotalCompany,vRegion,1.000000);
+
+#assigns elements to parent and weights to elements in hierarchy
+
+ELSE;
+# create the 2 level hierarchy changing the vRegion to be the leaf level element
+DIMENSIONELEMENTINSERT('UnevenSubsidiary','',vRegion,'N');
+DIMENSIONELEMENTINSERT('UnevenSubsidiary','',vTotalCompany,'c');
+
+# assign parent/child relationship and weights to elements in hierarchy
+DIMENSIONELEMENTCOMPONENTADD('UnevenSubsidiary',vTotalCompany,vRegion,1.000000);
+ENDIF;
+#endregion
+#region Data
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+#endregion
+#region Epilog
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+#endregion

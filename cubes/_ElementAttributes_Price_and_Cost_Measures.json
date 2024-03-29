@@ -1,0 +1,14 @@
+{
+	"@type":"Cube",
+	"Name":"_ElementAttributes_Price_and_Cost_Measures",
+	"Dimensions":
+	[
+		{
+			"@id":"Dimensions('Price_and_Cost_Measures')"
+		},
+		{
+			"@id":"Dimensions('}ElementAttributes_Price_and_Cost_Measures')"
+		}
+	],
+	"Views@Code.links":[]
+}

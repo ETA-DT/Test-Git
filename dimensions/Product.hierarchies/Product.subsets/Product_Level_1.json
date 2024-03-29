@@ -1,0 +1,5 @@
+{
+	"@type":"Subset",
+	"Name":"Product_Level_1",
+	"Expression":"{EXCEPT(DRILLDOWNMEMBER({[Product].[Product].[Total]} , {[Product].[Product].[Total]} , RECURSIVE) , {[Product].[Product].[Total]})}"
+}

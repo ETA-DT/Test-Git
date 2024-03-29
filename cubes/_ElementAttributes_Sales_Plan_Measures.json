@@ -1,0 +1,14 @@
+{
+	"@type":"Cube",
+	"Name":"_ElementAttributes_Sales_Plan_Measures",
+	"Dimensions":
+	[
+		{
+			"@id":"Dimensions('Sales_Plan_Measures')"
+		},
+		{
+			"@id":"Dimensions('}ElementAttributes_Sales_Plan_Measures')"
+		}
+	],
+	"Views@Code.links":[]
+}

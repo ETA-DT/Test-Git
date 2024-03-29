@@ -1,0 +1,33 @@
+{
+	"@type":"MDXView",
+	"Name":"new_view",
+	"MDX@Code.link":"new_view.mdx",
+	"Meta" : 
+	{
+		"Aliases" : {},
+		"ContextSets" : 
+		{
+			"[Account].[Account]" : 
+			{
+				"Expression" : "{[Account].[Account].MEMBERS}"
+			},
+			"[Region].[Region]" : 
+			{
+				"Expression" : "{[Region].[Region].MEMBERS}"
+			},
+			"[Time].[Time]" : 
+			{
+				"IsPublic" : true,
+				"SubsetName" : "Default"
+			}
+		},
+		"ExpandAboves" : 
+		{
+			"[Account].[Account]" : false,
+			"[Product].[Product]" : false,
+			"[Region].[Region]" : false,
+			"[Time].[Time]" : false,
+			"[Version].[Version]" : false
+		}
+	}
+}

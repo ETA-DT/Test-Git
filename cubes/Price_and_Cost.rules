@@ -1,0 +1,11 @@
+# hold the Unit Sale Price for the average
+['UnitPrice_hold']=N:['Unit Sale Price'];
+['UnitPrice_count']=N: IF (['Unit Sale Price'] <>0 , 1, 0);
+['Unit Sale Price']=C:['UnitPrice_hold']\['UnitPrice_count'];
+
+
+
+
+
+
+

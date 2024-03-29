@@ -1,0 +1,17 @@
+{
+	"@type":"Cube",
+	"Name":"Source_LSA",
+	"Dimensions":
+	[
+		{
+			"@id":"Dimensions('Product')"
+		},
+		{
+			"@id":"Dimensions('Sales_Plan_Measures')"
+		}
+	],
+	"Views@Code.links":
+	[
+		"Source_LSA.views/LSA_Moi.json"
+	]
+}

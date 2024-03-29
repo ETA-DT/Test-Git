@@ -1,0 +1,12 @@
+{
+	"@type":"Dimension",
+	"Name":"_ElementAttributes__Clients",
+	"Hierarchies@Code.links":
+	[
+		"_ElementAttributes__Clients.hierarchies/_ElementAttributes__Clients.json"
+	],
+	"DefaultHierarchy":
+	{
+		"@id":"Dimensions('_ElementAttributes__Clients')/Hierarchies('_ElementAttributes__Clients')"
+	}
+}

@@ -1,0 +1,20 @@
+{
+	"@type":"Cube",
+	"Name":"Cible_LSA_Mois",
+	"Dimensions":
+	[
+		{
+			"@id":"Dimensions('Product')"
+		},
+		{
+			"@id":"Dimensions('Months')"
+		},
+		{
+			"@id":"Dimensions('Sales_Plan_Measures')"
+		}
+	],
+	"Views@Code.links":
+	[
+		"Cible_LSA_Mois.views/Afficher1.json"
+	]
+}

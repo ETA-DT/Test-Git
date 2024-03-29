@@ -1,0 +1,5 @@
+{
+	"@type":"Subset",
+	"Name":"Red Wagon AI_S series",
+	"Expression":"{{FILTER(TM1FILTERBYPATTERN(TM1SubsetAll([Product].[Product]),\"*wagon*\"), ([Product].[Product].CURRENTMEMBER.PROPERTIES(\"Color\") = \"Red\"))}}"
+}

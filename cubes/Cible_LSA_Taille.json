@@ -1,0 +1,22 @@
+{
+	"@type":"Cube",
+	"Name":"Cible_LSA_Taille",
+	"Dimensions":
+	[
+		{
+			"@id":"Dimensions('Product')"
+		},
+		{
+			"@id":"Dimensions('TAILLES')"
+		},
+		{
+			"@id":"Dimensions('Sales_Plan_Measures')"
+		}
+	],
+	"Views@Code.links":
+	[
+		"Cible_LSA_Taille.views/Afficher1.json",
+		"Cible_LSA_Taille.views/Mensualisation.json",
+		"Cible_LSA_Taille.views/vue1.json"
+	]
+}

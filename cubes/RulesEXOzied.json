@@ -1,0 +1,18 @@
+{
+	"@type":"Cube",
+	"Name":"RulesEXOzied",
+	"Dimensions":
+	[
+		{
+			"@id":"Dimensions('Months')"
+		},
+		{
+			"@id":"Dimensions('Price_and_Cost_Measures')"
+		}
+	],
+	"Rules@Code.link":"RulesEXOzied.rules",
+	"Views@Code.links":
+	[
+		"RulesEXOzied.views/Par défaut.json"
+	]
+}

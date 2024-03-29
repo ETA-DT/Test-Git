@@ -1,0 +1,24 @@
+{
+	"@type":"Hierarchy",
+	"Name":"Indicateur",
+	"Elements":
+	[
+		{
+			"Name":"FPM",
+			"Type":"String"
+		},
+		{
+			"Name":"CPM",
+			"Type":"String"
+		},
+		{
+			"Name":"AMP",
+			"Type":"String"
+		},
+		{
+			"Name":"Product Category",
+			"Type":"String"
+		}
+	],
+	"Subsets@Code.links":[]
+}

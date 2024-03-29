@@ -1,0 +1,23 @@
+{
+	"@type":"Cube",
+	"Name":"Sales_Test",
+	"Dimensions":
+	[
+		{
+			"@id":"Dimensions('Version')"
+		},
+		{
+			"@id":"Dimensions('Region')"
+		},
+		{
+			"@id":"Dimensions('Product_Test')"
+		},
+		{
+			"@id":"Dimensions('Account')"
+		},
+		{
+			"@id":"Dimensions('Time')"
+		}
+	],
+	"Views@Code.links":[]
+}

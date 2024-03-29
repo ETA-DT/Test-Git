@@ -1,0 +1,5 @@
+{
+	"@type":"Subset",
+	"Name":"Region_leve1",
+	"Expression":"{{DISTINCT({[Region].[Region].[World], DESCENDANTS([Region].[Region].[World], 99 , LEAVES)})}}"
+}

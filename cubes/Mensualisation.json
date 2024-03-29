@@ -1,0 +1,17 @@
+{
+	"@type":"Cube",
+	"Name":"Mensualisation",
+	"Dimensions":
+	[
+		{
+			"@id":"Dimensions('Product')"
+		},
+		{
+			"@id":"Dimensions('Months')"
+		},
+		{
+			"@id":"Dimensions('Mensualisation-indic')"
+		}
+	],
+	"Views@Code.links":[]
+}

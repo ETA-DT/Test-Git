@@ -1,0 +1,26 @@
+{
+	"@type":"Process",
+	"Name":"SalesPlanDeleteData",
+	"HasSecurityAccess":false,
+	"Code@Code.link":"SalesPlanDeleteData.ti",
+	"UIData":"CubeAction=1511€DataAction=1503€CubeLogChanges=0€",
+	"VariablesUIData":
+	[
+		"IgnoredInputVarName=Subsidiaries€VarType=32€ColType=1165€",
+		"IgnoredInputVarName=Channels€VarType=32€ColType=1165€",
+		"IgnoredInputVarName=Products€VarType=32€ColType=1165€",
+		"IgnoredInputVarName=Months€VarType=32€ColType=1165€",
+		"IgnoredInputVarName=Versions€VarType=32€ColType=1165€",
+		"IgnoredInputVarName=Sales_Plan_Measures€VarType=32€ColType=1165€",
+		"IgnoredInputVarName=Valeur€VarType=32€ColType=1165€"
+	],
+	"DataSource":
+	{
+		"Type":"TM1CubeView",
+		"dataSourceNameForClient":"Sales_Plan",
+		"dataSourceNameForServer":"Sales_Plan",
+		"view":"zDeleteAll"
+	},
+	"Parameters":[],
+	"Variables":[]
+}

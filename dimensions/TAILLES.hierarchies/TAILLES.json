@@ -1,0 +1,28 @@
+{
+	"@type":"Hierarchy",
+	"Name":"TAILLES",
+	"Elements":
+	[
+		{
+			"Name":"S",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"M",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"L",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"XL",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"XXL",
+			"Type":"Numeric"
+		}
+	],
+	"Subsets@Code.links":[]
+}

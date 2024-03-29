@@ -1,0 +1,80 @@
+#region Prolog
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+IF(DimensionExists(vDestDim)=0);
+DimensionCreate( vDestDim );
+ENDIF;
+
+
+HierarchyCreate( vDestDim, vDestHier );
+
+
+#Added for Default Hierarchy
+
+if(vSourceHier@=vSourceDim);
+vElementSortType = CellGetS( '}DimensionProperties', vSourceDim, 'SORTELEMENTSTYPE' );
+vElementSortSense = CellGetS( '}DimensionProperties', vSourceDim, 'SORTELEMENTSSENSE' );
+vComponentsortType = CellGetS( '}DimensionProperties', vSourceDim, 'SORTCOMPONENTSTYPE' );
+vComponentsortSense = CellGetS( '}DimensionProperties', vSourceDim, 'SORTCOMPONENTSSENSE' );
+HierarchySortOrder( vDestDim, vDestHier, vComponentSortType, vComponentSortSense, vElementSortType, vElementSortSense );
+
+ELSE;
+
+#New Hierarchies
+
+vElementSortType = CellGetS( '}DimensionProperties', vSourceDim | ':' | vSourceHier, 'SORTELEMENTSTYPE' );
+vElementSortSense = CellGetS( '}DimensionProperties', vSourceDim | ':' | vSourceHier, 'SORTELEMENTSSENSE' );
+vComponentsortType = CellGetS( '}DimensionProperties', vSourceDim | ':' | vSourceHier, 'SORTCOMPONENTSTYPE' );
+vComponentsortSense = CellGetS( '}DimensionProperties', vSourceDim | ':' | vSourceHier, 'SORTCOMPONENTSSENSE' );
+HierarchySortOrder( vDestDim, vDestHier, vComponentSortType, vComponentSortSense, vElementSortType, vElementSortSense );
+
+ENDIF;
+
+vType = 'n';
+vName = '';
+vCompName = '';
+vx = 1;
+vCount = ElementCount( vSourceDim, vSourceHier );
+while (vx <= vCount );
+  vName = ElementName( vSourceDim, vSourceHier, vx );
+  vType = ElementType( vSourceDim, vSourceHier, vName );
+  HierarchyElementInsert( vDestDim, vDestHier, '', vName, vType );
+  vx = vx + 1;
+end;
+
+vx = 1;
+vcx = 1;
+vComponentCount = 0;
+while (vx <= vCount );
+  vName = ElementName( vSourceDim, vSourceHier, vx );
+  vType = ElementType( vSourceDim, vSourceHier, vName );
+  if ( vType @= 'c' ) ;
+     vComponentCount = ElementComponentCount( vSourceDim, vSourceHier, vName );
+     vcx = 1;
+     while (vcx <= vComponentCount );
+        vCompName = ElementComponent( vSourceDim, vSourceHier, vName, vcx );
+        HierarchyElementComponentAdd( vDestDim, vDestHier, vName, vCompName, ElementWeight( vSourceDim, vSourceHier, vName, vCompName ) );
+        vcx = vcx + 1;
+     end;
+  endif;
+  vx = vx + 1;
+end;
+
+#endregion
+#region Metadata
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+#endregion
+#region Data
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+#endregion
+#region Epilog
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+#endregion

@@ -1,0 +1,111 @@
+#region Prolog
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+#######################################################
+#--LSA-- Copie des quantités du cube source : Cible_LSA_Taille vers cube cible LSA_Taille_Mois
+#--Auteur: LSA
+#-- Date: 17/11/2022
+#-- Modification:
+#######################################################
+
+## Déclaration des variables ##
+vCubeSource='Cible_LSA_Taille';
+vCubeCible='LSA_Taille_Mois';
+
+vViewNameSource='Source_Mensualisation';
+vViewNameCible='Cible_Mensualisation';
+
+vSubsetNameSource='Subset_Source_Mensualisation';
+vSubsetNameCible='Subset_Cible_Mensualisation';
+
+vDim='Sales_Plan_Measures';
+
+##Vue Source ##
+
+#-- Création de la vue source 
+ViewDestroy( vCubeSource , vViewNameSource );
+ViewCreate( vCubeSource , vViewNameSource , 1 ); 
+
+# -- Création du sous ensemble
+SubsetDestroy( vDim , vSubsetNameSource ) ; 
+SubsetCreate( vDim , vSubsetNameSource , 1 ) ; 
+SubsetElementInsert( vDim , vSubsetNameSource , 'Quantity' , 1 ); 
+ViewSubsetAssign( vCubeSource , vViewNameSource , vDim , vSubsetNameSource );
+
+# -- Paramètres supplémentaires de la vue source 
+ViewExtractSkipZeroesSet ( vCubeSource , vViewNameSource , 1 ); 
+ViewExtractSkipCalcsSet(  vCubeSource , vViewNameSource , 1 ); 
+ViewExtractSkipRuleValuesSet ( vCubeSource , vViewNameSource , 1 ); 
+
+# -- Source Name Dynamic
+DataSourceType = 'View';
+DataSourceCubeView = vViewNameSource ;
+
+
+##Vue Purge##
+
+# -- Création de la vue de Purge
+ViewDestroy( vCubeCible , vViewNameCible );
+ViewCreate( vCubeCible , vViewNameCible , 1 ); 
+
+# -- Création de sous ensemble
+SubsetDestroy( vDim , vSubsetNameCible ) ; 
+SubsetCreate( vDim , vSubsetNameCible , 1 ) ; 
+SubsetElementInsert( vDim , vSubsetNameCible , 'Quantity' , 1 ); 
+ViewSubsetAssign( vCubeCible , vViewNameCible , vDim , vSubsetNameCible );
+
+ViewZeroOut( vCubeCible , vViewNameCible );
+#endregion
+#region Metadata
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+#endregion
+#region Data
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+
+vDimTailles='TAILLES';
+vCubeMensualisation='Mensualisation';
+vDimMonths='Months';
+
+## Boucle##
+
+i=1;
+iMax=Dimsiz(vDimTailles);
+
+
+While ( i <= iMax);
+
+	
+	vElem=DIMNM(vDimTailles, i);	
+	IF (ELLEV(vDimTailles , vElem)=0);
+
+	vElem=DIMNM(vDimMonths, i);	
+	IF (ELLEV(vDimMonths , vElem)=0);
+
+
+#-- On va chercher la valeur dans un autre cube
+
+	vMensualisation=CellGetN(vCubeMensualisation, Product,vElem,'Pourcentage');
+
+# -- Copie de la valeur dans le cube cible
+		CellPutN( Valeur*vRatio , vCubeCible , Product ,vElem, Sales_Plan_Measures );
+	
+	ENDIF;
+	
+
+	 i= i+1;
+
+
+End;
+#endregion
+#region Epilog
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+#endregion

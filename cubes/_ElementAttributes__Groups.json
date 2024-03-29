@@ -1,0 +1,14 @@
+{
+	"@type":"Cube",
+	"Name":"_ElementAttributes__Groups",
+	"Dimensions":
+	[
+		{
+			"@id":"Dimensions('}Groups')"
+		},
+		{
+			"@id":"Dimensions('}ElementAttributes_}Groups')"
+		}
+	],
+	"Views@Code.links":[]
+}

@@ -1,0 +1,22 @@
+{
+	"@type":"Subset",
+	"Name":"Electric&Perfomance Selection",
+	"Elements":
+	[
+		{
+			"@id":"Dimensions('Product')/Hierarchies('Product')/Elements('S Series 3.4 L Wagon 4WD')"
+		},
+		{
+			"@id":"Dimensions('Product')/Hierarchies('Product')/Elements('L Series 2.0 L Wagon 4WD')"
+		},
+		{
+			"@id":"Dimensions('Product')/Hierarchies('Product')/Elements('Brighton Platinum')"
+		},
+		{
+			"@id":"Dimensions('Product')/Hierarchies('Product')/Elements('Cascade CX')"
+		},
+		{
+			"@id":"Dimensions('Product')/Hierarchies('Product')/Elements('Bryce J60')"
+		}
+	]
+}
