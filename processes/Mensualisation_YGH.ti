@@ -1,0 +1,110 @@
+#region Prolog
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+##############################################
+#Processus permetant de copier des données d'un cube 'Cible_LSA_Taille' à "Cible_LSA_Taille_Mois" en utilisant le cube men,sualisatio
+#Yasmine GHAEM, Le 17/11/2022
+#MODIF
+
+
+##Déclaration Des Variables
+vCubeSource = 'Cible_LSA_Taille';
+vCubeCible = 'Cible_LSA_Taille_Mois';
+vMensualisation = 'Mensualisation';
+
+
+############################################################
+# -- Vue Source 
+vViewNameSource = 'YGH_viewSource';
+vSubsetNameSource = 'YGH_Mensualisation' ; 
+
+# -- Créer la vue source 
+ViewDestroy(vCubeSource , vViewNameSource );
+ViewCreate( vCubeSource , vViewNameSource , 1 ); 
+
+# -- Création de sous ensemble
+
+#### on prend tous les elemts des deux autres dimension 
+########### Sales_Measure
+vDim = 'Sales_Plan_Measures' ;
+SubsetDestroy( vDim , vSubsetNameSource ) ; 
+SubsetCreate( vDim , vSubsetNameSource , 1 ) ; 
+SubsetElementInsert( vDim , vSubsetNameSource , 'Quantity' , 1 ); 
+
+# -- Assignation a la vue 
+ViewSubsetAssign( vCubeSource , vViewNameSource , vDim , vSubsetNameSource );
+
+# -- Paramètres supplémentaires de la vue source 
+ViewExtractSkipZeroesSet ( vCubeSource , vViewNameSource , 1 ); 
+ViewExtractSkipCalcsSet(  vCubeSource , vViewNameSource , 1 ); 
+ViewExtractSkipRuleValuesSet ( vCubeSource , vViewNameSource , 1 ); 
+
+
+# -- Source Name Dynamic
+DataSourceType = 'View';
+DataSourceCubeView = vViewNameSource ;
+
+############################################################
+# -- Vue de purge
+vViewNamePurge ='YGH_Purge';
+vSubsetNamePurge = 'YGH_Subset_Purge' ;
+
+# -- Créer la vue de purge
+ViewDestroy( vCubeCible , vViewNamePurge );
+ViewCreate( vCubeCible , vViewNamePurge , 1 ); 
+
+# -- Création de sous ensemble
+SubsetDestroy( vDim , vSubsetNamePurge ) ; 
+SubsetCreate( vDim , vSubsetNamePurge , 1 ) ; 
+SubsetElementInsert( vDim , vSubsetNamePurge , 'Quantity' , 1 ); 
+ViewSubsetAssign( vCubeCible , vViewNamePurge , vDim , vSubsetNamePurge );
+
+ViewZeroOut( vCubeCible , vViewNamePurge );
+
+#endregion
+#region Metadata
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+#endregion
+#region Data
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+
+
+
+# -- Get tous les varibles pour le calcul ( QTEsource * %)
+# QTEsource = ;
+
+vQte = Value ;
+ASCIIOutput( 'Asmine.txt', NumberToString(vQte) );
+
+
+# -- Faire une boucle qui parcours tous les mois 
+# % =;
+
+
+
+# -- Calculer la QTE par taille et par mois 
+
+
+
+# -- Input QTe dans le Cube cible 
+#ASCIIOutput ('Asmine1.txt' ,  CellGetS( vCubeSource , Product , TAILLES , NumberToString(vQte)) );
+
+
+CellPutN( vQte , vCubeCible, 'Product' , 'TAILLES' , 'Months' , 'Sales_Plan_Measures' );
+
+#End;
+
+
+#endregion
+#region Epilog
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+#endregion

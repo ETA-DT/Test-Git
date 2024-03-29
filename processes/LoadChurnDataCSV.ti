@@ -1,0 +1,24 @@
+#region Prolog
+
+#****Begin: Generated Statements***
+OldCubeLogChanges = CUBEGETLOGCHANGES('Customer_Churn');
+CUBESETLOGCHANGES('Customer_Churn', 0);
+#****End: Generated Statements****
+#endregion
+#region Metadata
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+#endregion
+#region Data
+
+#****Begin: Generated Statements***
+CellPutN(vData,'Customer_Churn',vMonths,vMeasures);
+#****End: Generated Statements****
+#endregion
+#region Epilog
+
+#****Begin: Generated Statements***
+CUBESETLOGCHANGES('Customer_Churn', OldCubeLogChanges);
+#****End: Generated Statements****
+#endregion

@@ -1,0 +1,187 @@
+#region Prolog
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+
+
+ # -expliquer le processus simplement - 
+
+#Yasminel est en train de coder 08-11-2022
+# creation du process dl sales sales test qui permet de copier le budget des ventes en 2017 sur le produit SSSedan
+
+
+
+
+# - Déclaration des variables
+
+
+vCube = ' Sales';
+vViewName = GetProcessName();
+vSubsetName = GetProcessName();
+
+vViewNamePurge= GetProcessName() | 'Purge';
+vSubsetNamePurge = GetProcessName() | 'Purge';
+vCubeCible ='Sales_Test';
+
+###################*
+
+#-- définition de la source de données
+DataSourceType = 'View';
+DataSourceCubeView = vViewName;
+
+##################################
+
+#-- création de la vue source
+
+ViewDestroy (vCube, vViewName);
+SubsetCreate (vCube, vViewName);
+
+
+vDim='Version';
+SubsetDestroy(vDim,vSubsetName);
+SubsetCreate(vDim,vSubsetName);
+SubsetElementInsert(vDim,vSubsetName,'Budget', 1);
+ViewSubsetAssign(vCube,vViewName,vDim,vSubsetName);
+
+vDim='Product';
+SubsetDestroy(vDim,vSubsetName);
+SubsetCreate(vDim,vSubsetName);
+i=1;
+iMax=DimSiz(vDim);
+While (i<=iMax);
+	vElem = DimNm(vDim,i);
+	IF (Ellev(vDim,vElem)=0 & Elisanc (vDim,pProduct,vElem)=1);
+		SubsetElementInsert (vDim,vSubsetName, vElem,1);
+	Endif;
+	i=i+1;
+End;
+
+ViewSubsetAssign (vCube, vViewName, vDim, vSubsetName);
+
+vDim='Account';
+SubsetDestroy(vDim,vSubsetName);
+SubsetCreate (vDim,vSubsetName);
+SubsetElementInsert (vDim,vSubsetName, 'Sales',1);
+ViewSubsetAssign(vCube,vViewName,vDim,vSubsetName);
+
+vDim='Time';
+SubsetDestroy(vDim,vSubsetName);
+SubsetCreate(vDim,vSubsetName);
+i=1;
+iMax=DimSiz(vDim);
+While(i<=iMax);
+	vElem= DimNm(vDim,i);
+	IF (Ellev(vDim,vElem)=0 & Elisanc(vDim, pAnnee, vElem)=1);
+                         SubsetElementInsert ( vDim, vSubsetName, vElem, 1);
+	Endif;
+	i=i+1;
+End;
+
+
+ViewSubsetAssign (vCube, vViewName, vDim, vSubsetName);
+
+## --- 3 conditions
+
+ViewExtractSkipZeroesSet (vCube, vViewName, 1);
+ViewExtractSkipRuleValuesSet (vCube, vViewName, 0);
+ViewExtractSkipCalcsSet(vCube, vViewName, 1);
+
+##############################
+
+
+#--Creation de la vue de purge
+
+ViewDestroy(vCubeCible, vViewNamePurge);
+ViewCreate (vCubeCible, vSubsetNamePurge);
+
+
+vDim = 'Version';
+SubsetDestroy(vDim,vSubsetNamePurge);
+SubsetCreate(vDim,vSubsetNamePurge);
+SubsetElementInsert(vDim,vSubsetNamePurge,'Budget', 1);
+ViewSubsetAssign(vCubeCible,vViewNamePurge,vDim,vSubsetNamePurge);
+
+
+vDim='Product_Test';
+SubsetDestroy(vDim, vSubsetNamePurge);
+SubsetCreate(vDim,vSubsetNamePurge);
+i=1;
+iMax=DimSiz(vDim);
+While (i<=iMax);
+	vElem= DimNm(vDim,i);
+	IF (Ellev(vDim,vElem)=0 & Elisanc(vDim, pProduct, vElem)=1);
+		SubsetElementInsert (vDim,vSubsetNamePurge, vElem,1);
+	Endif;
+	i=i+1;
+End;
+
+ViewSubsetAssign(vCubeCible,vViewNamePurge, vDim,vSubsetNamePurge);
+
+
+vDim='Account';
+SubsetDestroy(vDim, vSubsetNamePurge);
+SubsetCreate(vDim, vSubsetNamePurge);
+SubsetElementInsert (vDim,vSubsetNamePurge, 'Sales',1);
+ViewSubsetAssign (vCubeCible,vViewNamePurge, vDim,vSubsetNamePurge);
+
+
+
+
+
+vDim='Time';
+SubsetDestroy(vDim, vSubsetNamePurge);
+SubsetCreate(vDim, vSubsetNamePurge);
+i=1;
+iMax=DimSiz(vDim);
+While (i<=iMax);
+	vElem= DimNm(vDim,i);
+	IF (Ellev(vDim,vElem)=0 & Elisanc(vDim, pAnnee, vElem)=1);
+		SubsetElementInsert(vDim,vSubsetNamePurge, vElem,1);
+	Endif;
+	i=i+1;
+End;
+
+ViewZeroOut(vCubeCible, vSubsetNamePurge);
+	
+#endregion
+#region Metadata
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+#endregion
+#region Data
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+CellPutN(valeur, vCubeCible, version, region, product, account, V5);
+#endregion
+#region Epilog
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+###-- destruction de la vue de source
+#-- destruction de la vue et des sous ensembles
+
+ViewDestroy(vCube, vViewName);
+t=1;
+
+WHILE(TABDIM(vCube, t) @<>'');
+     SubsetDestroy ( TABDIM ( vCube, t ), vViewName);
+t=t+1;
+End;
+
+
+##--- destruction de la vue de purge
+#-- destruction de la vue et des sous ensembles
+
+ViewDestroy(vCubeCible,  vViewNamePurge  );
+m=1;
+
+WHILE(TABDIM(vCube, t) @<>'');
+      SubsetDestroy ( TABDIM ( vCubeCible, m ), vViewNamePurge);
+m=m+1;
+End;
+#endregion

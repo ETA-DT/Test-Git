@@ -1,0 +1,24 @@
+{
+	"@type":"Hierarchy",
+	"Name":"_ElementAttributes_Months",
+	"Elements":
+	[
+		{
+			"Name":"MonthNumber",
+			"Type":"String"
+		},
+		{
+			"Name":"Full Name",
+			"Type":"String"
+		},
+		{
+			"Name":"Previous",
+			"Type":"String"
+		},
+		{
+			"Name":"Next",
+			"Type":"String"
+		}
+	],
+	"Subsets@Code.links":[]
+}

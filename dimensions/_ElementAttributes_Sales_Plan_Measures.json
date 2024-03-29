@@ -1,0 +1,12 @@
+{
+	"@type":"Dimension",
+	"Name":"_ElementAttributes_Sales_Plan_Measures",
+	"Hierarchies@Code.links":
+	[
+		"_ElementAttributes_Sales_Plan_Measures.hierarchies/_ElementAttributes_Sales_Plan_Measures.json"
+	],
+	"DefaultHierarchy":
+	{
+		"@id":"Dimensions('_ElementAttributes_Sales_Plan_Measures')/Hierarchies('_ElementAttributes_Sales_Plan_Measures')"
+	}
+}

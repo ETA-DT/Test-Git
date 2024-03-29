@@ -1,0 +1,42 @@
+{
+	"@type":"Process",
+	"Name":"CreateChannels",
+	"HasSecurityAccess":false,
+	"Code@Code.link":"CreateChannels.ti",
+	"UIData":"CubeAction=1511€DataAction=1503€CubeLogChanges=0€",
+	"VariablesUIData":
+	[
+		"VarType=32€ColType=825€VarDimension=Channels€VarDimAction=Mettre à jour€VarElemType=Numérique€VarDimElemSortType=BYHIERARCHY€VarDimElemSortSense=ASCENDING€",
+		"VarType=32€ColType=858€ConsolidationDim=Channels€ConsolidationChildVar=vChannels€ConsolidationChildWeight=1.000000€ComponentSortType=BYNAME€ComponentSortSense=ASCENDING€"
+	],
+	"DataSource":
+	{
+		"Type":"ASCII",
+		"asciiDecimalSeparator":",",
+		"asciiDelimiterChar":",",
+		"asciiDelimiterType":"Character",
+		"asciiHeaderRecords":0,
+		"asciiQuoteCharacter":"\"",
+		"asciiThousandSeparator":" ",
+		"dataSourceNameForClient":"D:\\Applications\\Tm1\\CarSales_Test\\Fichier\\Channels.csv",
+		"dataSourceNameForServer":"D:\\Applications\\Tm1\\CarSales_Test\\Fichier\\Channels.csv"
+	},
+	"Parameters":[],
+	"Variables":
+	[
+		{
+			"Name":"vChannels",
+			"Type":"String",
+			"Position":1,
+			"StartByte":0,
+			"EndByte":0
+		},
+		{
+			"Name":"vTotalChannels",
+			"Type":"String",
+			"Position":2,
+			"StartByte":0,
+			"EndByte":0
+		}
+	]
+}

@@ -1,0 +1,16 @@
+{
+	"@type":"Hierarchy",
+	"Name":"_ElementAttributes_Price_and_Cost_Measures",
+	"Elements":
+	[
+		{
+			"Name":"Picklist",
+			"Type":"String"
+		},
+		{
+			"Name":"Format",
+			"Type":"String"
+		}
+	],
+	"Subsets@Code.links":[]
+}

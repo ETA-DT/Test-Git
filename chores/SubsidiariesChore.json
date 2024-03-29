@@ -1,0 +1,28 @@
+{
+	"@type":"Chore",
+	"Name":"SubsidiariesChore",
+	"StartTime":"2009-12-08T02:37:21Z",
+	"DSTSensitive":false,
+	"Active":false,
+	"ExecutionMode":"SingleCommit",
+	"Frequency":"P30DT00H00M00S",
+	"Tasks":
+	[
+		{
+			"Step":0,
+			"Parameters":[],
+			"Process":
+			{
+				"@id":"Processes('CreateSubsidiariesDimCSV')"
+			}
+		},
+		{
+			"Step":1,
+			"Parameters":[],
+			"Process":
+			{
+				"@id":"Processes('CreateSubsidiariesRegion_Subset')"
+			}
+		}
+	]
+}

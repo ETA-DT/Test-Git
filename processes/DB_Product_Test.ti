@@ -1,0 +1,92 @@
+#region Prolog
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+#-Création d'une dimention Via Architect en Créant un processus Appelé DB_Product_Test
+#-Yasmine a fait le code le 03/11/2022
+
+
+
+#--déclaration de variables
+vDim= 'Product_Test';
+zFile= vDim | '.txt';
+
+
+#-- Définition du nom et de l'emplacement du fichier source
+
+File = 'D:\Applications\Tm1\CarSales_Test\Fichier\'|zFile;
+
+#--Définition de la source de donnée
+DataSourceNameForServer=File;
+
+
+# Créer la dimension
+
+
+IF( DimensionExists (vDim) = 0);
+
+     DIMENSIONCREATE(vDim);
+     
+     #-- creer l'element 'Total'
+     DIMENSIONELEMENTINSERT(vDim, '' , ' Total' , 'C' );
+
+     #--on range les elements 
+     DIMENSIONSORTORDER(vDim, 'ByInput','ASCENDING','ByHierarchy','ASCENDING');
+ENDIF;
+
+
+#-- suppression des attributs et creation de attributs
+
+AttrDelete( vDim , 'Color');
+AttrDelete ( vDim , 'Customer Target');
+AttrDelete ( vDim , 'Engine Type');
+AttrDelete ( vDim , 'Engine Size');
+AttrDelete ( vDim , 'Product Type');
+AttrDelete ( vDim , 'Interior Type');
+
+AttrInsert ( vDim ,'' , 'Color','S');
+AttrInsert ( vDim , '', 'Customer Target','S');
+AttrInsert ( vDim ,'' , 'Engine Type','S');
+AttrInsert ( vDim ,'' , 'Engine Size','S');
+AttrInsert ( vDim ,'' , 'Product Type','S');
+AttrInsert ( vDim , '' , 'Interior Type','S');
+
+#endregion
+#region Metadata
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+
+
+#--on insert tout les elements de la dimension
+DIMENSIONELEMENTINSERT (vDim, '', Enfant, Type);
+
+#-- rattachement de l'enfant au parent
+IF ( Parent @='');
+	Itemskip;
+ELSE;
+	DIMENSIONELEMENTCOMPONENTADD(vDim, Parent, Enfant, Poids);
+ENDIF;
+#endregion
+#region Data
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+
+#-- création des attributs
+
+AttrPuts (Color, vDim, Enfant, 'Color');
+AttrPuts ( Customer, vDim, Enfant, 'Customer Target');
+AttrPuts (EngineType, vDim, Enfant, 'Engine Type');
+AttrPuts (EngineSize, vDim, Enfant, 'Engine Size');
+AttrPuts (ProductType, vDim, Enfant, 'Product Type');
+AttrPuts (Interior, vDim, Enfant, 'Interior Type');
+#endregion
+#region Epilog
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+#endregion

@@ -1,0 +1,28 @@
+{
+	"@type":"Chore",
+	"Name":"CreateProducts_ProductTypeSubsets",
+	"StartTime":"2009-12-08T02:27:11Z",
+	"DSTSensitive":false,
+	"Active":false,
+	"ExecutionMode":"SingleCommit",
+	"Frequency":"P7DT00H00M00S",
+	"Tasks":
+	[
+		{
+			"Step":0,
+			"Parameters":[],
+			"Process":
+			{
+				"@id":"Processes('CreateProductsCSV')"
+			}
+		},
+		{
+			"Step":1,
+			"Parameters":[],
+			"Process":
+			{
+				"@id":"Processes('CreateProductType_subsets')"
+			}
+		}
+	]
+}

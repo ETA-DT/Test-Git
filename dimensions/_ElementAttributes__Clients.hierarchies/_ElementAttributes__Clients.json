@@ -1,0 +1,12 @@
+{
+	"@type":"Hierarchy",
+	"Name":"_ElementAttributes__Clients",
+	"Elements":
+	[
+		{
+			"Name":"}TM1_DefaultDisplayValue",
+			"Type":"String"
+		}
+	],
+	"Subsets@Code.links":[]
+}
